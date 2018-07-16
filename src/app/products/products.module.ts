@@ -8,15 +8,23 @@ import { ProductsComponent } from './containers/products/products.component';
 import { PizzaItemComponent } from './components/pizza-item/pizza-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from "@ngrx/effects";
+import { ProductItemComponent } from './containers/product-item/product-item.component';
+import { PizzaFormComponent } from './components/pizza-form/pizza-form.component';
+import { PizzaDisplayComponent } from './components/pizza-display/pizza-display.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
 @NgModule({
   imports: [
     CommonModule,
     ProductsRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     StoreModule.forFeature("products", reducers),
     EffectsModule.forFeature(effects)
   ],
-  declarations: [ProductsComponent, PizzaItemComponent],
+  declarations: [ProductsComponent, PizzaItemComponent, ProductItemComponent, PizzaFormComponent, PizzaDisplayComponent],
   providers: [PizzaService]
 })
 export class ProductsModule {}
